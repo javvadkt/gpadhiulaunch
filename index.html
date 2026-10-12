@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0f2942">
+<meta name="description" content="GPA-DHIU Current Affairs & Quiz Hub: Daily editorial review, peer-reviewed question bank, and timed quizzes for UPSC Foundation students at Darul Huda Islamic University.">
+<title>GPA-DHIU | Current Affairs & Quiz Hub</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230f2942'/%3E%3Cg transform='translate(12 12) scale(1.67)' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 5v16'/%3E%3Cpath d='M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+/* Launch screen shows on the first visit only. Add ?ceremony to the URL to show it again. */
+(function () {
+  var seen = false;
+  try { seen = localStorage.getItem('gpadhiu-launched') === '1'; } catch (e) {}
+  if (seen && !/[?&]ceremony/.test(location.search)) document.documentElement.classList.add('skip-stage');
+})();
+</script>
+<style>
+:root {
+  --navy: #0f2942;
+  --navy-2: #163657;
+  --blue: #2563eb;
+  --blue-d: #1d4ed8;
+  --blue-soft: #e8f0fe;
+  --bg: #f8fafc;
+  --bg-2: #f1f5f9;
+  --card: #ffffff;
+  --line: #e2e8f0;
+  --ink: #0f172a;
+  --body: #475569;
+  --muted: #64748b;
+  --head: "Plus Jakarta Sans", system-ui, sans-serif;
+  --text: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+body { margin: 0; font: 400 1rem/1.65 var(--text); color: var(--body); background: var(--bg); -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, p { margin: 0; }
+h1, h2, h3, h4 { font-family: var(--head); color: var(--navy); line-height: 1.2; letter-spacing: -0.02em; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid #93c5fd; outline-offset: 3px; }
+.wrap { width: min(1120px, 100% - 2.5rem); margin-inline: auto; }
+.icon { width: 1.15em; height: 1.15em; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Institutional Top bar */
+.inst-bar { background: var(--navy); color: #cbd5e1; font-size: 0.8rem; padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.inst-bar .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+.inst-bar strong { color: #fff; font-weight: 600; }
+
+/* Buttons & Badges */
+.pill { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.35rem 0.85rem; border-radius: 999px; background: var(--blue-soft); color: var(--blue); font: 600 0.8rem var(--text); }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 46px; padding: 0 1.5rem; border-radius: 10px; border: 1px solid transparent; font: 600 0.95rem var(--text); text-decoration: none; cursor: pointer; transition: background 0.2s, border-color 0.2s; }
+.btn-primary { background: var(--navy); color: #fff; }
+.btn-primary:hover { background: var(--navy-2); }
+.btn-blue { background: var(--blue); color: #fff; }
+.btn-blue:hover { background: var(--blue-d); }
+.btn-line { background: #fff; border-color: var(--line); color: var(--navy); }
+.btn-line:hover { border-color: var(--navy); }
+
+/* Navigation */
+.header { position: sticky; top: 0; z-index: 20; background: rgba(255, 255, 255, 0.94); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.header-row { display: flex; align-items: center; justify-content: space-between; min-height: 68px; }
+.brand { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+.logo { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 12px; background: var(--navy); color: #fff; }
+.brand-text { display: grid; line-height: 1.2; }
+.brand-text strong { font: 700 1rem var(--head); color: var(--navy); }
+.brand-text small { font-size: 0.74rem; color: var(--muted); }
+.nav { display: flex; align-items: center; gap: 1.8rem; }
+.nav a:not(.btn) { text-decoration: none; font-weight: 500; font-size: 0.94rem; color: var(--body); }
+.nav a:not(.btn):hover { color: var(--navy); }
+
+/* Notice Banner */
+.notice-box { margin-top: 1.8rem; padding: 0.9rem 1.2rem; border-radius: 10px; background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--blue); display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.notice-tag { display: inline-flex; align-items: center; gap: 0.4rem; font: 700 0.78rem var(--head); text-transform: uppercase; letter-spacing: 0.05em; color: var(--blue); }
+.notice-text { font-size: 0.9rem; color: var(--ink); flex: 1; min-width: 250px; }
+
+/* Hero Section */
+.hero { padding: clamp(3rem, 7vw, 5rem) 0 3.5rem; }
+.hero-grid { display: grid; grid-template-columns: 1.15fr 0.95fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+.hero h1 { font-size: clamp(2.3rem, 4.5vw, 3.4rem); font-weight: 800; color: var(--navy); margin: 0.9rem 0 1rem; line-height: 1.15; }
+.goal-statement { font-size: 1.12rem; line-height: 1.6; color: var(--ink); font-weight: 500; margin-bottom: 0.8rem; }
+.origin-note { font-size: 0.95rem; color: var(--muted); line-height: 1.6; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.8rem; }
+
+/* Mock Dashboard */
+.mock { display: grid; grid-template-columns: 160px 1fr; background: var(--card); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; box-shadow: 0 24px 48px -24px rgba(15, 41, 66, 0.3); }
+.mock-side { padding: 1rem 0.8rem; background: var(--bg-2); border-right: 1px solid var(--line); }
+.mock-brand { display: flex; align-items: center; gap: 0.5rem; padding: 0 0.3rem 1rem; font: 700 0.82rem var(--head); color: var(--navy); }
+.mock-brand .logo { width: 28px; height: 28px; border-radius: 8px; font-size: 14px; }
+.mock-nav { display: grid; gap: 0.25rem; }
+.mock-nav span { display: flex; align-items: center; gap: 0.5rem; padding: 0.45rem 0.6rem; border-radius: 8px; font-size: 0.78rem; font-weight: 500; color: var(--body); }
+.mock-nav .on { background: var(--navy); color: #fff; }
+.mock-main { padding: 1.2rem; }
+.eyebrow { font: 600 0.68rem var(--text); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.mock-main h3 { font-size: 1.25rem; margin: 0.2rem 0 0.8rem; }
+.m-card { padding: 1rem; border: 1px solid var(--line); border-radius: 12px; }
+.m-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem; }
+.m-top h4 { margin: 0.2rem 0 0; font: 700 1.05rem var(--head); color: var(--navy); }
+.status { padding: 0.2rem 0.6rem; border-radius: 999px; background: #fef3c7; color: #92400e; font: 600 0.7rem var(--text); }
+.m-meta { display: flex; gap: 1rem; margin-top: 0.7rem; font-size: 0.76rem; }
+.m-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 0.7rem; }
+.m-stats div { padding: 0.8rem 1rem; border: 1px solid var(--line); border-radius: 12px; }
+.m-stats span { display: block; font-size: 0.72rem; color: var(--muted); }
+.m-stats strong { font: 700 1.4rem var(--head); color: var(--navy); }
+
+/* Common Sections */
+.section { padding: clamp(3rem, 6vw, 4.5rem) 0; }
+.section.alt { background: var(--bg-2); border-block: 1px solid var(--line); }
+.section-head { margin-bottom: 2.2rem; }
+.section-head h2 { font-size: clamp(1.7rem, 3.2vw, 2.2rem); font-weight: 800; }
+.section-head p { margin-top: 0.4rem; font-size: 0.98rem; color: var(--muted); }
+
+/* 4 Workspace Tools */
+.tools-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; }
+.tool-card { padding: 1.5rem; background: #fff; border: 1px solid var(--line); border-radius: 16px; }
+.tool-icon { width: 42px; height: 42px; border-radius: 12px; background: var(--blue-soft); color: var(--blue); display: grid; place-items: center; margin-bottom: 1rem; font-size: 1.15rem; }
+.tool-card h3 { font-size: 1.15rem; margin-bottom: 0.4rem; }
+.tool-card p { font-size: 0.92rem; color: var(--body); }
+
+/* Daily Methodology Steps */
+.method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+.method-card { padding: 1.5rem; background: #fff; border: 1px solid var(--line); border-radius: 14px; }
+.method-step { font: 800 1.5rem var(--head); color: #94a3b8; margin-bottom: 0.6rem; }
+.method-card h3 { font-size: 1.1rem; margin-bottom: 0.4rem; }
+.method-card p { font-size: 0.9rem; color: var(--body); }
+
+/* Curriculum */
+.subject-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; }
+.subject-item { padding: 1.25rem 1.4rem; border-radius: 12px; background: #fff; border: 1px solid var(--line); }
+.subject-item h4 { font-size: 1.05rem; margin-bottom: 0.3rem; color: var(--navy); }
+.subject-item p { font-size: 0.88rem; color: var(--muted); }
+
+/* About GPA in Institute */
+.institute-callout { padding: 2rem 2.2rem; background: #fff; border: 1px solid var(--line); border-radius: 16px; display: grid; grid-template-columns: 1.5fr 1fr; gap: 2rem; align-items: center; }
+.institute-callout h3 { font-size: 1.4rem; margin-bottom: 0.6rem; }
+.institute-callout p { font-size: 0.95rem; color: var(--body); }
+.institute-badge-box { background: var(--bg-2); padding: 1.4rem; border-radius: 12px; border: 1px solid var(--line); }
+.institute-badge-box span { display: block; font: 600 0.8rem var(--head); color: var(--blue); text-transform: uppercase; letter-spacing: 0.05em; }
+.institute-badge-box strong { display: block; margin: 0.3rem 0; font-size: 1.1rem; color: var(--navy); }
+.institute-badge-box small { font-size: 0.82rem; color: var(--muted); }
+
+/* Faculty & Mentors */
+.mentors-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+.mentor-card { padding: 1.4rem; background: #fff; border: 1px solid var(--line); border-radius: 14px; text-align: center; }
+.mentor-avatar { width: 70px; height: 70px; border-radius: 50%; background: var(--bg-2); border: 2px solid var(--line); display: grid; place-items: center; margin: 0 auto 0.9rem; font: 700 1.25rem var(--head); color: var(--navy); }
+.mentor-card h4 { font-size: 1.05rem; margin-bottom: 0.2rem; }
+.mentor-card small { display: block; font-weight: 600; color: var(--blue); font-size: 0.82rem; margin-bottom: 0.5rem; }
+.mentor-card p { font-size: 0.86rem; color: var(--body); }
+
+/* CTA Banner */
+.cta { padding: clamp(3rem, 6vw, 4.5rem) 0; background: var(--navy); color: #fff; text-align: center; }
+.cta h2 { color: #fff; font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 800; }
+.cta p { margin: 0.8rem 0 1.8rem; color: #c3d1e0; font-size: 1.05rem; }
+
+/* Footer */
+.footer { padding: 2rem 0; font-size: 0.88rem; color: var(--muted); border-top: 1px solid var(--line); background: #fff; }
+.footer-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.footer a { text-decoration: none; }
+.footer a:hover { color: var(--navy); }
+
+/* Launch Stage */
+.stage { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; color: #fff; text-align: center; background: radial-gradient(ellipse at 50% 40%, #173d70 0%, var(--navy) 55%, #0a1b2d 100%); transition: opacity 0.9s ease, visibility 0.9s; }
+.skip-stage .stage, .stage.gone { display: none; }
+.stage.done { opacity: 0; visibility: hidden; }
+.stage-controls { display: grid; justify-items: center; gap: 0.9rem; }
+.stage-controls .btn { min-height: 56px; padding-inline: 2.5rem; font-size: 1.05rem; }
+.reveal { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: 0.6rem; opacity: 0; pointer-events: none; }
+.reveal h1 { margin-top: 1.2rem; color: #fff; font-size: clamp(2.3rem, 6vw, 3.6rem); font-weight: 800; }
+.reveal-sub { font: 500 1.1rem var(--text); color: #b9c9da; }
+.reveal-guest { margin-top: 1.2rem; font: 600 1.15rem var(--head); color: #93c5fd; }
+.logo-lg { width: 88px; height: 88px; border-radius: 24px; font-size: 46px; background: var(--navy-2); box-shadow: 0 0 0 1px rgba(147, 197, 253, 0.25), 0 0 70px 10px rgba(37, 99, 235, 0.45); }
+.ring { position: absolute; left: 50%; top: 50%; width: 60px; height: 60px; margin: -30px 0 0 -30px; border: 2px solid #60a5fa; border-radius: 50%; opacity: 0; pointer-events: none; }
+.confetti { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+
+.launching .stage-controls { opacity: 0; pointer-events: none; }
+.launching .reveal { opacity: 1; transition: opacity 0.6s 0.25s; }
+.launching .logo-lg { animation: pop 1.2s cubic-bezier(0.2, 0.9, 0.25, 1) 0.3s both; }
+.launching .ring { animation: ring 1.8s ease-out 0.35s forwards; }
+.launching .reveal h1 { animation: rise 0.8s ease 1.2s both; }
+.launching .reveal-sub { animation: rise 0.8s ease 1.8s both; }
+.launching .reveal-guest { animation: rise 0.8s ease 2.4s both; }
+
+@keyframes pop { from { transform: scale(0.4); opacity: 0; } 60% { transform: scale(1.08); opacity: 1; } to { transform: scale(1); opacity: 1; } }
+@keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+@keyframes ring { 0% { opacity: 0.8; transform: scale(1); } 100% { opacity: 0; transform: scale(40); } }
+
+/* Site reveal */
+.site { transition: opacity 0.9s ease; }
+.has-stage .site { opacity: 0; }
+.has-stage .site.ready { opacity: 1; }
+
+@media (max-width: 960px) {
+  .hero-grid, .institute-callout { grid-template-columns: 1fr; }
+  .tools-grid { grid-template-columns: 1fr 1fr; }
+  .subject-grid, .method-grid, .mentors-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 680px) {
+  .nav a:not(.btn) { display: none; }
+  .tools-grid, .subject-grid, .method-grid, .mentors-grid { grid-template-columns: 1fr; }
+  .mock { grid-template-columns: 1fr; }
+  .mock-side { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  .confetti { display: none; }
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 5v16"/><path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z"/></symbol>
+  <symbol id="i-quiz" viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><path d="M8 2v3"/><path d="M16 2v3"/><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M8 13h.01"/><path d="M12 13h.01"/><path d="M16 13h.01"/><path d="M8 17h.01"/><path d="M12 17h.01"/><path d="M16 17h.01"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+</svg>
+
+<!-- Launch Screen -->
+<section class="stage" id="stage" role="dialog" aria-modal="true" aria-label="Website launch ceremony">
+  <canvas class="confetti" id="confetti" aria-hidden="true"></canvas>
+  <div class="stage-controls">
+    <button class="btn btn-blue" id="launchBtn" type="button">Launch Website</button>
+  </div>
+  <div class="reveal">
+    <span class="logo logo-lg"><svg class="icon"><use href="#i-book"/></svg></span>
+    <h1>GPA-DHIU</h1>
+    <p class="reveal-sub">Current Affairs &amp; Quiz Hub</p>
+    <p class="reveal-guest" id="guest" hidden></p>
+  </div>
+  <div class="ring" aria-hidden="true"></div>
+</section>
+
+<div class="site" id="site">
+
+
+
+  <!-- Sticky Header -->
+  <header class="header">
+    <div class="wrap header-row">
+      <a class="brand" href="#top" aria-label="GPA-DHIU Home">
+        <span class="logo"><svg class="icon"><use href="#i-book"/></svg></span>
+        <span class="brand-text">
+          <strong>GPA-DHIU</strong>
+          <small>Current Affairs &amp; Quiz Hub</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Main Navigation">
+        <a href="#workspace">Workspace</a>
+        <a href="#routine">How it works</a>
+        <a href="#curriculum">Subjects</a>
+        <a href="#about-gpa">About GPA</a>
+        <a class="btn btn-primary" href="https://gpadhiu.vercel.app/" target="_blank" rel="noopener">Open Workspace</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- Hero Section: Focused on the Quiz & Current Affairs Hub -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <h1>Daily current affairs, checked by the class.</h1>
+
+          <!-- Department Goal (Directly under the headline) -->
+          <p class="origin-note">
+            The Department of Governance and Public Administration (GPA) equips students with rigorous civil services preparation and constitutional literacy through daily peer-verified editorial analysis and timed competitive quizzes.
+          </p>
+         
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://gpadhiu.vercel.app/" target="_blank" rel="noopener">Open Workspace <svg class="icon"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-line" href="#workspace">See Tools</a>
+          </div>
+
+        
+        </div>
+
+        <!-- Live Preview Mockup -->
+        <div class="mock" role="img" aria-label="Workspace dashboard overview">
+          <div class="mock-side">
+            <div class="mock-brand"><span class="logo"><svg class="icon"><use href="#i-book"/></svg></span>GPA-DHIU</div>
+            <div class="mock-nav">
+              <span class="on"><svg class="icon"><use href="#i-book"/></svg>Overview</span>
+              <span><svg class="icon"><use href="#i-book"/></svg>Question bank</span>
+              <span><svg class="icon"><use href="#i-quiz"/></svg>Quizzes</span>
+              <span><svg class="icon"><use href="#i-cal"/></svg>Duty calendar</span>
+            </div>
+          </div>
+          <div class="mock-main">
+            <span class="eyebrow">UPSC Foundation · Active Session</span>
+            <h3>Overview</h3>
+            <div class="m-card">
+              <div class="m-top">
+                <div>
+                  <span class="eyebrow">Today's duty</span>
+                  <h4>Yoosuf Kamal</h4>
+                </div>
+                <span class="status">In progress</span>
+              </div>
+              <div class="m-meta">
+                <span><strong>Target:</strong> 10 questions</span>
+                <span><strong>Scope:</strong> Polity &amp; Governance</span>
+              </div>
+            </div>
+            <div class="m-stats">
+              <div><span>Contributions</span><strong>10</strong></div>
+              <div><span>Active quizzes</span><strong>1</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Workspace Tools (The practical section, 4 tools + button) -->
+    <section class="section alt" id="workspace">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">The Practical Workspace</span>
+          <h2>Everything a study day needs</h2>
+          <p>Four interconnected tools designed to run the class's daily study and quiz routine.</p>
+        </div>
+
+        <div class="tools-grid">
+          <article class="tool-card">
+            <div class="tool-icon"><svg class="icon"><use href="#i-book"/></svg></div>
+            <h3>Current affairs</h3>
+            <p>Daily summaries of national editorials mapped directly to constitutional polity and governance issues.</p>
+          </article>
+
+          <article class="tool-card">
+            <div class="tool-icon"><svg class="icon"><use href="#i-book"/></svg></div>
+            <h3>Question bank</h3>
+            <p>A searchable repository of student-contributed multiple-choice questions, tagged by syllabus topics.</p>
+          </article>
+
+          <article class="tool-card">
+            <div class="tool-icon"><svg class="icon"><use href="#i-quiz"/></svg></div>
+            <h3>Live quizzes</h3>
+            <p>Timed practice tests with automated scoring, instant explanations, and performance metrics.</p>
+          </article>
+
+          <article class="tool-card">
+            <div class="tool-icon"><svg class="icon"><use href="#i-cal"/></svg></div>
+            <h3>Duty calendar</h3>
+            <p>A transparent rotation schedule ensuring every student takes responsibility for formulating and verifying questions.</p>
+          </article>
+        </div>
+
+        <div style="margin-top: 2.2rem; text-align: center;">
+          <a class="btn btn-primary" href="https://gpadhiu.vercel.app/" target="_blank" rel="noopener">Launch Workspace Portal <svg class="icon"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- How the Department Works (Hands-on Routine) -->
+    <section class="section" id="routine">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Hands-On Methodology</span>
+          <h2>How the department works</h2>
+          <p>A daily active-learning cycle that keeps every student engaged with the exam standard.</p>
+        </div>
+
+        <div class="method-grid">
+          <article class="method-card">
+            <div class="method-step">01</div>
+            <h3>Daily Duty Rotation</h3>
+            <p>Students take turns on the editorial desk, scanning the morning papers and drafting the day's core study briefs.</p>
+          </article>
+
+          <article class="method-card">
+            <div class="method-step">02</div>
+            <h3>Peer Questions</h3>
+            <p>Assigned students formulate exam-calibrated MCQs, which are reviewed by peers and validated before entering the question bank.</p>
+          </article>
+
+          <article class="method-card">
+            <div class="method-step">03</div>
+            <h3>Weekly Quizzes</h3>
+            <p>The cohort takes timed assessments generated from the accumulated bank, tracking accuracy and analytical retention.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Students Study -->
+    <section class="section alt" id="curriculum">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Academic Scope</span>
+          <h2>What students study</h2>
+          <p>Core subject areas covered in lectures and reinforced through daily question formulation.</p>
+        </div>
+
+        <div class="subject-grid">
+          <div class="subject-item">
+            <h4>Polity &amp; Constitution</h4>
+            <p>Governance mechanisms, constitutional provisions, administrative law, and state institutions.</p>
+          </div>
+          <div class="subject-item">
+            <h4>Economy</h4>
+            <p>Macroeconomic policy, budget breakdown, public finance, and socio-economic development.</p>
+          </div>
+          <div class="subject-item">
+            <h4>Ethics &amp; Integrity</h4>
+            <p>Administrative moral philosophy, case study resolution, and public accountability.</p>
+          </div>
+          <div class="subject-item">
+            <h4>Current Affairs</h4>
+            <p>Daily national developments, diplomatic policies, and major legislative bills.</p>
+          </div>
+          <div class="subject-item">
+            <h4>Essay Writing</h4>
+            <p>Structuring analytical arguments, philosophical reasoning, and coherent socio-political commentary.</p>
+          </div>
+          <div class="subject-item">
+            <h4>Interview Preparation</h4>
+            <p>Verbal articulation, mock panels, opinion synthesis, and personality assessment drills.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About GPA & Place in the Institute -->
+    <section class="section" id="about-gpa">
+      <div class="wrap">
+        <div class="institute-callout">
+          <div>
+            <span class="eyebrow">About the Department</span>
+            <h3>Place in the Graduate Institute</h3>
+            <p>
+              The Graduate Institute of Islamic and Human Sciences at Darul Huda Islamic University houses five specialized departments. Governance and Public Administration (GPA) serves as the department dedicated to UPSC and civil service coaching.
+            </p>
+            <p style="margin-top: 0.8rem; font-size: 0.92rem; color: var(--muted);">
+              Introduced as part of Darul Huda’s 40th anniversary milestones, GPA blends deep ethical foundations with competitive preparation.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Leadership and Mentors -->
+    <section class="section alt" id="mentors">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Academic Guidance</span>
+          <h2>Leadership &amp; mentors</h2>
+          <p>Faculty members guiding our daily study routine and question review cycles.</p>
+        </div>
+
+        <div class="mentors-grid">
+          <article class="mentor-card">
+            <div class="mentor-avatar">HD</div>
+            <h4>Head of Department</h4>
+            <small>Dr. Noufal Mala Hudawi</small>
+            <p>Supervises departmental curriculum, competitive guidance, and academic direction.</p>
+          </article>
+
+          <article class="mentor-card">
+            <div class="mentor-avatar">FM</div>
+            <h4>Department Faculty</h4>
+            <small>Dr. Shihab Hudawi</small>
+            <p>Oversees constitutional study, administrative theory, and essay writing reviews.</p>
+          </article>
+
+          <article class="mentor-card">
+            <div class="mentor-avatar">CC</div>
+            <h4>Quiz &amp; Duty Coordinator</h4>
+            <small>Muhammed Irfan C</small>
+            <p>Coordinates the daily duty rotation roster, MCQ peer validation, and weekly quiz scoring.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+      <div class="wrap">
+        <h2>Ready to join today's session?</h2>
+        <p>Log in to review assigned questions, track your duty slot, or take the open test.</p>
+        <a class="btn btn-blue" href="https://gpadhiu.vercel.app/" target="_blank" rel="noopener">Open Student Workspace <svg class="icon"><use href="#i-arrow"/></svg></a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="wrap footer-row">
+      <div>
+        <strong>Department of Governance and Public Administration (GPA)</strong><br>
+        <span style="font-size: 0.82rem;">Graduate Institute of Islamic and Human Sciences &bull; Darul Huda Islamic University</span>
+      </div>
+      <div>
+        <a href="https://gpadhiu.vercel.app/" target="_blank" rel="noopener">gpadhiu.vercel.app</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  var root = document.documentElement;
+  if (root.classList.contains('skip-stage')) return;
+
+  var stage = document.getElementById('stage');
+  var site = document.getElementById('site');
+  var launchBtn = document.getElementById('launchBtn');
+  var guestEl = document.getElementById('guest');
+  var canvas = document.getElementById('confetti');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var started = false;
+
+  document.body.classList.add('has-stage');
+  if (launchBtn) launchBtn.focus();
+
+  var guest = "U. Muhammed Shafi Haji";
+  if (guest && guestEl) {
+    guestEl.textContent = 'Inaugurated by ' + guest.trim().slice(0, 60);
+    guestEl.hidden = false;
+  }
+
+  function chime() {
+    try {
+      var C = window.AudioContext || window.webkitAudioContext, ctx = new C(), t = ctx.currentTime;
+      [392, 523.25, 783.99].forEach(function (f, i) {
+        var o = ctx.createOscillator(), g = ctx.createGain(), s = t + 0.3 + i * 0.16;
+        o.type = 'sine'; o.frequency.value = f;
+        g.gain.setValueAtTime(0.0001, s);
+        g.gain.exponentialRampToValueAtTime(0.12, s + 0.03);
+        g.gain.exponentialRampToValueAtTime(0.0001, s + 1.5);
+        o.connect(g); g.connect(ctx.destination); o.start(s); o.stop(s + 1.6);
+      });
+    } catch (e) {}
+  }
+
+  function confetti() {
+    if (reduce) return;
+    var ctx = canvas.getContext('2d'), w = canvas.width = innerWidth, h = canvas.height = innerHeight;
+    var colors = ['#2563eb', '#60a5fa', '#93c5fd', '#e8f0fe', '#ffffff'], parts = [];
+    for (var i = 0; i < 110; i++) {
+      var a = Math.random() * Math.PI * 2, v = 5 + Math.random() * 9;
+      parts.push({ x: w / 2, y: h * 0.42, vx: Math.cos(a) * v, vy: Math.sin(a) * v - 4, s: 5 + Math.random() * 6,
+        r: Math.random() * 6, vr: (Math.random() - 0.5) * 0.3, c: colors[i % colors.length], o: 1 });
+    }
+    (function frame() {
+      ctx.clearRect(0, 0, w, h);
+      var alive = 0;
+      parts.forEach(function (p) {
+        p.x += p.vx; p.y += p.vy; p.vy += 0.22; p.vx *= 0.985; p.r += p.vr; p.o -= 0.009;
+        if (p.o <= 0) return;
+        alive++;
+        ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.r); ctx.globalAlpha = p.o;
+        ctx.fillStyle = p.c; ctx.fillRect(-p.s / 2, -p.s / 3, p.s, p.s * 0.6); ctx.restore();
+      });
+      if (alive) requestAnimationFrame(frame); else ctx.clearRect(0, 0, w, h);
+    })();
+  }
+
+  function finish() {
+    stage.classList.add('done');
+    site.classList.add('ready');
+    try { localStorage.setItem('gpadhiu-launched', '1'); } catch (e) {}
+    setTimeout(function () {
+      stage.classList.add('gone');
+      document.body.classList.remove('has-stage');
+    }, 1000);
+  }
+
+  function launch() {
+    if (started) return;
+    started = true;
+    stage.classList.add('launching');
+    chime();
+    setTimeout(confetti, 450);
+    setTimeout(finish, reduce ? 600 : 3800);
+  }
+
+  if (launchBtn) launchBtn.addEventListener('click', launch);
+})();
+</script>
+</body>
+</html>
