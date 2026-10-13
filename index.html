@@ -13,8 +13,7 @@
 <script>
 /* Launch screen shows on the first visit only. Add ?ceremony to the URL to show it again. */
 (function () {
-  var seen = false;
-  try { seen = localStorage.getItem('gpadhiu-launched') === '1'; } catch (e) {}
+  var seen = true;
   if (seen && !/[?&]ceremony/.test(location.search)) document.documentElement.classList.add('skip-stage');
 })();
 </script>
